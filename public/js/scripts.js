@@ -22,7 +22,6 @@ fetch('/weather?search='+search.value).then((resp)=>{
         }
         else
         {
-            //console.log(resultpara1.innerHTML);
             resultpara1.innerHTML=data.location;
             resultpara2.innerHTML+=data.summary;
         }
