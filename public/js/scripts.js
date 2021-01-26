@@ -16,7 +16,6 @@ weatherform.addEventListener('submit',(e)=>{
     resultpara2.innerHTML='';
 fetch('/weather?search='+search.value).then((resp)=>{ 
   resp.json().then((data)=>{
-        //console.log(data);
         if(data.error)
         {
             resultpara1.innerHTML= data.error
