@@ -1,0 +1,13 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = codensurer
+	email = 49128354+codeensurer@users.noreply.github.com
+[gui]
+	recentrepo = .
+	recentrepo = .
+[winUpdater]
+	recentlySeenVersion = 2.30.0.windows.2
