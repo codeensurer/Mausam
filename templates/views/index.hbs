@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Mausam</title>
+    </head>
+    <body>
+        <div class="main-content"> 
+        {{>header}}
+        <h2>
+            Want to know the weather!!
+        </h2>
+        <form >  
+        <input placeholder="Location" id="address">
+        <button id="myBtn" type="submit">search</button>        
+        </form>
+        <br/>
+        <p1 id="locationpara"> </p1>
+        <br>
+        <br>
+        <p1 id="weather-result"></p1>
+        </div>
+        {{>footer}}
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
