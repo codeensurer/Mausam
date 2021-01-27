@@ -4,6 +4,7 @@ const path = require('path')
 const hbs = require('hbs');
 const geocode=require('../utils/geocode')
 const weather=require('../utils/weather')
+const capital=require('../utils/administrativezones')
 const app = express();
 const port = process.env.PORT || 3000
 var publictpath=path.join(__dirname,'../public')
@@ -101,7 +102,23 @@ app.get('/about',(req,res)=>{
     res.render('about',{title:"About",name:"Ruby"})
 })
 
-
+app.get('/capitals',(req,res)=>{
+    res.render('capitals',{title:"Capitals Of The World",name:"dakshya"});
+});
+app.get('/capitals/search',(req,res)=>{
+    if(req.query.country)
+    {
+    capital(req.query.country,(err,countrycaplist=[])=>
+    {
+        
+        return res.send(countrycaplist);
+    })
+    }
+    else
+    {
+        return res.send({countryname:req.query.country,capitalname:"could not find capital"});
+    }
+});
 app.get('/help',(req,res)=>{
     res.render('help',{title:"Help",name:"Ruby"})
 })

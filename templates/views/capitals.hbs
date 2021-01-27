@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+       
+        <title>{{title}}</title>
+
+    </head>
+    <body>
+        <div class="main-content"> 
+        {{>header}}
+        
+        <h2>
+            Do you know the capitals of different countries and states?
+            Try your general knowledge here.
+        </h2>
+        {{!-- <img class=portrait src="/img/ruby.jpg"> --}}
+        <br>
+        <br>
+        <form id="searchcap">
+            <input id="country" placeholder="country">
+            <button type="submit">find capital</button>
+        </form>
+        <br>
+        <br>
+        <div>
+            <p1 id="resolvedCountry"></p1>
+            <p1 id="searchedCapital"></p1>
+        </div>
+</div>
+        {{>footer}}
+        <script src="/js/capitalscripts.js"></script>
+    </body>
+</html>

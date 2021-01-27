@@ -7,18 +7,16 @@ const weather= ({latitude,longitude,lang}={lang:"hi"},callback)=>
     {
         darkurl+="&lang="+lang;
     }
-//console.log(darkurl);
     request({url:darkurl,json:true},(error,response)=>{
     if(error)
     {
         callback(error,undefined);
     }
     else
-{  
+    {  
     var finalresp=  response.body;
-//console.log(finalresp);
-    callback(undefined,finalresp);
-}})
+    //console.log(finalresp);
+    callback(undefined,finalresp);}})
 }
 
 module.exports=weather
