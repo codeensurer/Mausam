@@ -55,16 +55,37 @@ app.get('/weather',(req,res)=>{
             }
             else
             {
-                weather({latitude,longitude},(error,{summary}={})=>{
+                var retSummary='';
+                var retresp={};
+                weather({latitude,longitude,lang:'hi'},(error,respsummaryhin={})=>{
                     if(error)
                     {
                         console.log("no weather");
                     }
                     else
                     {
-                        return res.send({location:location,summary:summary});
+                        retresp={location:location,summary:respsummaryhin};
+                     //   return res.send({location:location,summary:summary});
+                     weather({latitude,longitude},(error,respsummary={})=>{
+                        if(error)
+                        {
+                            console.log("no weather");
+                        }
+                        else
+                        {
+                            //console.log(respsummary)
+                            retresp.Engsummary=respsummary;
+                            //console.log(respsummary);
+                            return res.send(retresp);
+                            }
+                    });
+                    
+                        
                     }
                 })
+                
+                
+                
             }
         })
     }
